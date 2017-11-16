@@ -1,0 +1,21 @@
+<h1><%= @brewery.name %></h1>
+
+
+
+<% if  @brewery.styles.any? %>
+      <h4> <%= @brewery.name %> brews these styles of beer: </h4>
+      <ul>
+        <% @brewery.styles.each do |style| %>
+          <li><%=style.style  %> </li>
+        <%end %>
+      </ul>
+    <%else %>
+    <p>There are no Beer styles yet.</p>
+    <% end %>
+
+
+<p><%= link_to "Return to Breweries", breweries_path %></p>
+<p><%= link_to "Edit a Brewery", edit_brewery_path%></p>
+<p> <%= link_to "delete", brewery_path(@brewery),
+                          :data => { :confirm => "You sure?",
+                                      :method => "delete"} %></p>

@@ -10,23 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115180522) do
+ActiveRecord::Schema.define(version: 20171115230734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "beer_styles", force: :cascade do |t|
-    t.string "style"
-    t.string "country_of_origin"
-    t.string "description"
-    t.datetime "updated_at"
-    t.datetime "created_at"
-  end
-
-  create_table "beer_styles_breweries", force: :cascade do |t|
-    t.integer "beer_style_id"
-    t.integer "brewery_id"
-  end
 
   create_table "beers", force: :cascade do |t|
     t.string "name"
@@ -38,14 +25,27 @@ ActiveRecord::Schema.define(version: 20171115180522) do
     t.string "malt"
     t.string "bio"
     t.integer "style_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "breweries", force: :cascade do |t|
     t.string "name"
-    t.datetime "updated_at"
-    t.datetime "created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "breweries_styles", force: :cascade do |t|
+    t.integer "brewery_id"
+    t.integer "style_id"
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string "style"
+    t.string "country_of_origin"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
