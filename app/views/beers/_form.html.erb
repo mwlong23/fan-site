@@ -1,0 +1,37 @@
+<%= render( 'layouts/errors', :object => @beer) %>
+
+<%= form_for [ @style, @beer] do |f| %>
+
+ <%= f.label :name %>
+ <%= f.text_field :name %>
+
+ <%= f.label  :alcohol_content%>
+ <%= f.text_field  :alcohol_content%>
+
+ <%= f.label :ibu%>
+<%= f.text_field :ibu %>
+
+<%= f.label :blg %>
+<%= f.text_field :blg %>
+
+<%= f.label :hops %>
+<%= f.text_field :hops %>
+
+
+<%= f.label :yeast%>
+<%= f.text_field :yeast%>
+
+
+<%= f.label :malt %>
+<%= f.text_field :malt %>
+
+
+<%= f.label :bio%>
+<%= f.text_field :bio %>
+
+
+ <br>
+
+ <br>
+ <%= f.submit %>
+<%end %>
