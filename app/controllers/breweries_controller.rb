@@ -1,13 +1,13 @@
 class BreweriesController < ApplicationController
   def index
     @breweries = Brewery.all
-    render :index
+    # render :index
   end
 
   def show
     @brewery = Brewery.find(params[:id])
-    render :show
   end
+
   def new
     @brewery = Brewery.new
     render :new
@@ -42,9 +42,9 @@ class BreweriesController < ApplicationController
   end
 
 
-private
-  def brewery_params
-    params.require(:brewery).permit(:name)
-  end
+  private
+    def brewery_params
+      params.require(:brewery).permit(:name)
+    end
 
 end

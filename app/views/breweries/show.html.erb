@@ -6,7 +6,7 @@
       <h4> <%= @brewery.name %> brews these styles of beer: </h4>
       <ul>
         <% @brewery.styles.each do |style| %>
-        <li> <%= link_to style.style_name, brewery_style_path(@brewery, style.id) %> 
+        <li> <%= link_to style.style_name, brewery_style_path(@brewery, style.id) %>
          <%= link_to "Edit", edit_brewery_style_path(@brewery, style) %>
          <%= link_to "Delete", brewery_style_path(@brewery, style),
                                     :data => { :confirm => "Are you sure",
