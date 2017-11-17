@@ -1,0 +1,15 @@
+.jumbotron {
+  background-color: black;
+}
+
+h1 center{
+  color: green
+}
+
+body {
+  background-image: url("../images/hops-background.png")
+}
+
+.navbar {
+  margin: 0;
+}

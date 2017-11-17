@@ -1,15 +1,17 @@
-<h2> <%= @style.style_name %>s produced by <%=@brewery.name %> </h2>
+<div class="container">
+  <h2> <%= @style.style_name %>s produced by <%=@brewery.name %> </h2>
 
-<p><strong>Country of origin:</strong>  <%=@style.country_of_origin%></p>
+  <p><strong>Country of origin:</strong>  <%=@style.country_of_origin%></p>
 
-<p><strong>Description:</strong>  <%= @style.description %> </p>
+  <p><strong>Description:</strong>  <%= @style.description %> </p>
 
 
- <% if@style.beers.any? %>
-    <ul>
-      <% @style.beers.each do |beer| %>
-      <li> <%= link_to beer.name, style_beer_path(@style, beer.id) %> </li>
-      <%end %>
-    </ul>
+   <% if@style.beers.any? %>
+      <ul>
+        <% @style.beers.each do |beer| %>
+        <li> <%= link_to beer.name, style_beer_path(@style, beer.id) %> </li>
+        <%end %>
+      </ul>
 
-  <%end %>
+    <%end %>
+</div>
